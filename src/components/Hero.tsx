@@ -1,0 +1,132 @@
+import React from 'react';
+import { ArrowUpRight, MapPin, Mail, Phone, Linkedin, Eye, Github } from 'lucide-react';
+import { personalInfo } from '../data/portfolioData';
+
+interface HeroProps {
+  isDark: boolean;
+  onOpenResume: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ isDark, onOpenResume }) => {
+  return (
+    <section id="about" className="relative pt-16 pb-20 md:pt-24 md:pb-24 overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="space-y-7">
+          {/* Status badge */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-['JetBrains_Mono'] border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Available for Opportunities · Lagos, Nigeria</span>
+            </div>
+          </div>
+
+          {/* Heading */}
+          <div className="space-y-3">
+            <div className="text-sm sm:text-base font-['JetBrains_Mono'] text-neutral-400 tracking-wide">
+              Hi, I'm
+            </div>
+            <h1 className={`text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight font-['Outfit'] leading-[1.08] ${
+              isDark ? 'text-white' : 'text-neutral-900'
+            }`}>
+              Adejinmi Dan{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+                Toluwase
+              </span>
+            </h1>
+            <p className="text-lg sm:text-2xl font-semibold text-emerald-400 font-['Outfit'] pt-1">
+              Cybersecurity Analyst · Front-End Developer · UI/UX Designer
+            </p>
+          </div>
+
+          {/* Spread Bio text */}
+          <p className={`text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl ${
+            isDark ? 'text-neutral-300 font-light' : 'text-neutral-700'
+          }`}>
+            {personalInfo.profile}
+          </p>
+
+          {/* Action buttons */}
+          <div className="pt-3 flex flex-wrap items-center gap-3.5">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold rounded-full bg-emerald-500 text-neutral-950 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95"
+            >
+              <span>View Projects</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+
+            <button
+              onClick={onOpenResume}
+              className={`inline-flex items-center gap-2 px-5 py-3 text-xs sm:text-sm font-medium rounded-full border transition-all cursor-pointer ${
+                isDark
+                  ? 'border-neutral-700 bg-neutral-900 text-white hover:bg-neutral-800 hover:border-emerald-500/50'
+                  : 'border-neutral-300 bg-white text-neutral-900 hover:bg-neutral-100 hover:border-emerald-500/50 shadow-sm'
+              } hover:scale-105 active:scale-95`}
+            >
+              <Eye className="w-4 h-4 text-emerald-400" />
+              <span>View Resume</span>
+            </button>
+
+            <a
+              href="#contact"
+              className={`inline-flex items-center gap-1.5 px-5 py-3 text-xs sm:text-sm font-semibold rounded-full border transition-all ${
+                isDark
+                  ? 'border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600 bg-neutral-900/40'
+                  : 'border-neutral-300 text-neutral-700 hover:text-black hover:border-neutral-500 bg-neutral-50'
+              }`}
+            >
+              <span>Get In Touch</span>
+            </a>
+          </div>
+
+          {/* Quick contact / social links */}
+          <div className="pt-3 border-t border-neutral-800/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-['JetBrains_Mono'] text-neutral-400">
+            <span className="flex items-center gap-1.5 text-neutral-400">
+              <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{personalInfo.location}</span>
+            </span>
+            <span className="text-neutral-600">·</span>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{personalInfo.email}</span>
+            </a>
+            <span className="text-neutral-600">·</span>
+            <a
+              href={`tel:${personalInfo.phone}`}
+              className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{personalInfo.phone}</span>
+            </a>
+            <span className="text-neutral-600">·</span>
+            <a
+              href={personalInfo.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:underline flex items-center gap-1"
+            >
+              <Linkedin className="w-3.5 h-3.5" />
+              <span>LinkedIn</span>
+            </a>
+            <span className="text-neutral-600">·</span>
+            <a
+              href={personalInfo.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:underline flex items-center gap-1"
+            >
+              <Github className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
