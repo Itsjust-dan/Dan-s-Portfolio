@@ -25,8 +25,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDark, onSele
           </h2>
         </div>
 
-        {/* Text-First Project Cards (No Images, Pure Information) */}
-        <div className="space-y-6">
+        {/* 3-Column Side-by-Side Project Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
           {technicalProjects.map((project) => {
             const isGoRide = project.id === 'transportation-app-interface';
 
@@ -40,62 +40,66 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDark, onSele
                     onSelectProject(project);
                   }
                 }}
-                className={`group rounded-2xl border p-6 sm:p-7 transition-all duration-300 cursor-pointer ${
+                className={`group rounded-2xl border p-5 transition-all duration-300 cursor-pointer flex flex-col justify-between h-full ${
                   isGoRide
-                    ? 'border-emerald-500/40 hover:border-emerald-400 bg-neutral-900/70 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20'
+                    ? isDark
+                      ? 'border-emerald-500/40 hover:border-emerald-400 bg-neutral-900/70 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20'
+                      : 'border-emerald-500/40 hover:border-emerald-500 bg-white shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20'
                     : isDark
                     ? 'bg-neutral-900/60 border-neutral-800 hover:border-emerald-500/50 shadow-md hover:shadow-xl'
                     : 'bg-white border-neutral-200 hover:border-emerald-500/50 shadow-sm hover:shadow-md'
                 } hover:-translate-y-0.5`}
               >
-                {/* Card Top Meta */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-neutral-800/60 text-xs font-['JetBrains_Mono']">
-                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[11px] font-semibold">
-                    {project.categoryLabel}
-                  </span>
-                  <span className="text-neutral-400">
-                    {project.year}
-                  </span>
-                </div>
+                <div>
+                  {/* Card Top Meta */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-neutral-800/60 text-xs font-['JetBrains_Mono']">
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold">
+                      {project.categoryLabel}
+                    </span>
+                    <span className="text-neutral-400 text-[11px]">
+                      {project.year}
+                    </span>
+                  </div>
 
-                {/* Title & Subtitle */}
-                <div className="mt-4">
-                  <h3 className={`text-xl sm:text-2xl font-bold font-['Outfit'] tracking-tight group-hover:text-emerald-400 transition-colors flex items-center gap-2 ${
-                    isDark ? 'text-white' : 'text-neutral-900'
+                  {/* Title & Subtitle */}
+                  <div className="mt-4">
+                    <h3 className={`text-lg font-bold font-['Outfit'] tracking-tight leading-snug group-hover:text-emerald-400 transition-colors flex items-start justify-between gap-2 ${
+                      isDark ? 'text-white' : 'text-neutral-900'
+                    }`}>
+                      <span>{project.title}</span>
+                      {isGoRide ? (
+                        <ExternalLink className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
+                      ) : (
+                        <ArrowUpRight className="w-4 h-4 text-emerald-400 shrink-0 mt-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      )}
+                    </h3>
+                    <p className="text-[11px] font-['JetBrains_Mono'] text-neutral-400 mt-1.5">
+                      {project.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Summary */}
+                  <p className={`mt-3 text-xs sm:text-sm leading-relaxed ${
+                    isDark ? 'text-neutral-300' : 'text-neutral-600'
                   }`}>
-                    <span>{project.title}</span>
-                    {isGoRide ? (
-                      <ExternalLink className="w-4 h-4 text-emerald-400 shrink-0" />
-                    ) : (
-                      <ArrowUpRight className="w-4 h-4 text-emerald-400 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    )}
-                  </h3>
-                  <p className="text-xs font-['JetBrains_Mono'] text-neutral-400 mt-1">
-                    {project.subtitle}
+                    {project.summary}
                   </p>
                 </div>
 
-                {/* Summary */}
-                <p className={`mt-3 text-sm leading-relaxed ${
-                  isDark ? 'text-neutral-300' : 'text-neutral-600'
-                }`}>
-                  {project.summary}
-                </p>
-
                 {/* Tech Stack & Direct Actions */}
-                <div className="mt-5 pt-4 border-t border-neutral-800/60 flex flex-wrap items-center justify-between gap-3 text-xs font-['JetBrains_Mono']">
+                <div className="mt-5 pt-4 border-t border-neutral-800/60 space-y-3 text-xs font-['JetBrains_Mono']">
                   <div className="flex flex-wrap gap-1.5 text-neutral-400">
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 rounded bg-neutral-800/80 text-neutral-300 text-[11px]"
+                        className="px-2 py-0.5 rounded bg-neutral-800/80 text-neutral-300 text-[10px]"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
@@ -122,7 +126,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDark, onSele
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     ) : (
-                      <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold group-hover:text-emerald-300 transition-colors">
+                      <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold group-hover:text-emerald-300 transition-colors ml-auto">
                         <span>Inspect Details</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
