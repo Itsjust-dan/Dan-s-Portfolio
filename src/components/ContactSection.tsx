@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle2, ArrowUpRight, Linkedin, MessageSquare, X, Github } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle2, Linkedin, MessageSquare, X, Github } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 interface ContactSectionProps {
@@ -56,83 +56,71 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ isDark }) => {
               Available for cybersecurity analyst roles, front-end web engineering, and UI/UX design opportunities. Reach out via email, phone, or LinkedIn.
             </p>
 
-            <div className="space-y-3 pt-2 text-xs font-['JetBrains_Mono']">
-              {/* Email */}
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className={`flex items-center justify-between p-3.5 rounded-xl border transition-all ${
-                  isDark
-                    ? 'bg-neutral-900/60 border-neutral-800 text-neutral-200 hover:border-emerald-500/50 hover:text-emerald-400'
-                    : 'bg-white border-neutral-200 text-neutral-800 hover:border-emerald-500/50 shadow-sm'
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-emerald-400" />
-                  <span>{personalInfo.email}</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-['JetBrains_Mono']">
+              {[
+                {
+                  label: personalInfo.location,
+                  href: `https://maps.google.com/?q=${encodeURIComponent(personalInfo.location)}`,
+                  external: true,
+                  icon: <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />,
+                  ariaLabel: `Location: ${personalInfo.location}`,
+                  accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+                },
+                {
+                  label: personalInfo.email,
+                  href: `mailto:${personalInfo.email}`,
+                  external: false,
+                  icon: <Mail className="w-4 h-4 text-emerald-400 shrink-0" />,
+                  ariaLabel: `Email: ${personalInfo.email}`,
+                  accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+                },
+                {
+                  label: personalInfo.phone,
+                  href: `tel:${personalInfo.phone}`,
+                  external: false,
+                  icon: <Phone className="w-4 h-4 text-cyan-400 shrink-0" />,
+                  ariaLabel: `Phone: ${personalInfo.phone}`,
+                  accent: 'hover:border-cyan-500/50 hover:text-cyan-400',
+                },
+                {
+                  label: 'linkedin.com/in/dan-adejinmi',
+                  href: personalInfo.linkedinUrl,
+                  external: true,
+                  icon: <Linkedin className="w-4 h-4 text-cyan-400 shrink-0" />,
+                  ariaLabel: 'LinkedIn Profile',
+                  accent: 'hover:border-cyan-500/50 hover:text-cyan-400',
+                },
+                {
+                  label: 'github.com/Itsjust-dan',
+                  href: personalInfo.githubUrl,
+                  external: true,
+                  icon: <Github className="w-4 h-4 text-emerald-400 shrink-0" />,
+                  ariaLabel: 'GitHub Profile',
+                  accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+                },
+              ].map((item) => (
+                <a
+                  key={item.ariaLabel}
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  aria-label={item.ariaLabel}
+                  className={`group inline-flex items-center h-11 px-3.5 rounded-full border transition-all duration-300 ${
+                    isDark
+                      ? 'bg-neutral-900/60 border-neutral-800 text-neutral-200'
+                      : 'bg-white border-neutral-200 text-neutral-800 shadow-sm'
+                  } ${item.accent}`}
+                >
+                  {item.icon}
+                  <span className="max-w-0 overflow-hidden opacity-0 whitespace-nowrap group-hover:max-w-[240px] group-hover:opacity-100 group-hover:ml-2.5 group-focus-visible:max-w-[240px] group-focus-visible:opacity-100 group-focus-visible:ml-2.5 transition-all duration-300">
+                    {item.label}
+                  </span>
+                </a>
+              ))}
+            </div>
 
-              {/* Phone from CV */}
-              <a
-                href={`tel:${personalInfo.phone}`}
-                className={`flex items-center justify-between p-3.5 rounded-xl border transition-all ${
-                  isDark
-                    ? 'bg-neutral-900/60 border-neutral-800 text-neutral-200 hover:border-emerald-500/50 hover:text-emerald-400'
-                    : 'bg-white border-neutral-200 text-neutral-800 hover:border-emerald-500/50 shadow-sm'
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <span>{personalInfo.phone}</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href={personalInfo.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center justify-between p-3.5 rounded-xl border transition-all ${
-                  isDark
-                    ? 'bg-neutral-900/60 border-neutral-800 text-neutral-200 hover:border-emerald-500/50 hover:text-emerald-400'
-                    : 'bg-white border-neutral-200 text-neutral-800 hover:border-emerald-500/50 shadow-sm'
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Linkedin className="w-4 h-4 text-cyan-400" />
-                  <span>linkedin.com/in/dan-adejinmi</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-
-              {/* GitHub */}
-              <a
-                href={personalInfo.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center justify-between p-3.5 rounded-xl border transition-all ${
-                  isDark
-                    ? 'bg-neutral-900/60 border-neutral-800 text-neutral-200 hover:border-emerald-500/50 hover:text-emerald-400'
-                    : 'bg-white border-neutral-200 text-neutral-800 hover:border-emerald-500/50 shadow-sm'
-                }`}
-              >
-                <div className="flex items-center gap-2.5">
-                  <Github className="w-4 h-4 text-emerald-400" />
-                  <span>github.com/Itsjust-dan</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-
-              {/* Location Badge */}
-              <div className="p-3 rounded-xl border border-neutral-800/80 bg-neutral-900/30 flex items-center justify-between text-neutral-400 text-[11px]">
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Based in {personalInfo.location}</span>
-                </span>
-                <span className="text-emerald-400">Open to Relocation / Remote</span>
-              </div>
+            <div className="text-[11px] font-['JetBrains_Mono'] text-emerald-400 pt-1">
+              Open to Relocation / Remote
             </div>
           </div>
 

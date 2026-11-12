@@ -82,48 +82,70 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onOpenResume }) => {
             </a>
           </div>
 
-          {/* Quick contact / social links */}
-          <div className="pt-3 border-t border-neutral-800/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-['JetBrains_Mono'] text-neutral-400">
-            <span className="flex items-center gap-1.5 text-neutral-400">
-              <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{personalInfo.location}</span>
-            </span>
-            <span className="text-neutral-600">·</span>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
-            >
-              <Mail className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{personalInfo.email}</span>
-            </a>
-            <span className="text-neutral-600">·</span>
-            <a
-              href={`tel:${personalInfo.phone}`}
-              className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-emerald-400" />
-              <span>{personalInfo.phone}</span>
-            </a>
-            <span className="text-neutral-600">·</span>
-            <a
-              href={personalInfo.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 hover:underline flex items-center gap-1"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
-            </a>
-            <span className="text-neutral-600">·</span>
-            <a
-              href={personalInfo.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-emerald-400 hover:underline flex items-center gap-1"
-            >
-              <Github className="w-3.5 h-3.5" />
-              <span>GitHub</span>
-            </a>
+          {/* Quick contact / social icon links (icon-only until hover, clickable to destinations) */}
+          <div className={`pt-4 border-t flex flex-wrap items-center gap-3 text-xs font-['JetBrains_Mono'] ${
+            isDark ? 'border-neutral-800/60' : 'border-neutral-200'
+          }`}>
+            {[
+              {
+                label: personalInfo.location,
+                href: `https://maps.google.com/?q=${encodeURIComponent(personalInfo.location)}`,
+                external: true,
+                icon: <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />,
+                ariaLabel: `Location: ${personalInfo.location}`,
+                accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+              },
+              {
+                label: personalInfo.email,
+                href: `mailto:${personalInfo.email}`,
+                external: false,
+                icon: <Mail className="w-4 h-4 text-emerald-400 shrink-0" />,
+                ariaLabel: `Email: ${personalInfo.email}`,
+                accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+              },
+              {
+                label: personalInfo.phone,
+                href: `tel:${personalInfo.phone}`,
+                external: false,
+                icon: <Phone className="w-4 h-4 text-emerald-400 shrink-0" />,
+                ariaLabel: `Phone: ${personalInfo.phone}`,
+                accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+              },
+              {
+                label: 'LinkedIn',
+                href: personalInfo.linkedinUrl,
+                external: true,
+                icon: <Linkedin className="w-4 h-4 text-cyan-400 shrink-0" />,
+                ariaLabel: 'LinkedIn Profile',
+                accent: 'hover:border-cyan-500/50 hover:text-cyan-400',
+              },
+              {
+                label: 'GitHub',
+                href: personalInfo.githubUrl,
+                external: true,
+                icon: <Github className="w-4 h-4 text-emerald-400 shrink-0" />,
+                ariaLabel: 'GitHub Profile',
+                accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+              },
+            ].map((item) => (
+              <a
+                key={item.ariaLabel}
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                aria-label={item.ariaLabel}
+                className={`group inline-flex items-center h-10 px-3 rounded-full border transition-all duration-300 ${
+                  isDark
+                    ? 'border-neutral-800 bg-neutral-900/60 text-neutral-300'
+                    : 'border-neutral-200 bg-white text-neutral-700 shadow-sm'
+                } ${item.accent}`}
+              >
+                {item.icon}
+                <span className="max-w-0 overflow-hidden opacity-0 whitespace-nowrap group-hover:max-w-[220px] group-hover:opacity-100 group-hover:ml-2 group-focus-visible:max-w-[220px] group-focus-visible:opacity-100 group-focus-visible:ml-2 transition-all duration-300">
+                  {item.label}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
