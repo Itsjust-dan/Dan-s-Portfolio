@@ -35,9 +35,11 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                     isDark ? 'bg-neutral-900/60 border-neutral-800 shadow-md' : 'bg-white border-neutral-200 shadow-md'
                   }`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-neutral-800/80">
+                  <div className={`flex flex-col sm:flex-row sm:items-start justify-between gap-3 ${
+                    (edu.grade || (edu.coursework && edu.coursework.length > 0)) ? 'pb-3 border-b border-neutral-800/80' : ''
+                  }`}>
                     <div>
-                      <h3 className="text-lg font-bold font-['Outfit'] text-white">
+                      <h3 className={`text-lg font-bold font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                         {edu.degree}
                       </h3>
                       <div className="text-xs font-['JetBrains_Mono'] text-emerald-400 mt-0.5">
@@ -49,11 +51,13 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                     </span>
                   </div>
 
-                  <div className="mt-3 text-xs font-semibold text-cyan-400 font-['JetBrains_Mono']">
-                    Status: {edu.grade}
-                  </div>
+                  {edu.grade && (
+                    <div className="mt-3 text-xs font-semibold text-cyan-400 font-['JetBrains_Mono']">
+                      Status: {edu.grade}
+                    </div>
+                  )}
 
-                  {edu.coursework && (
+                  {edu.coursework && edu.coursework.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mt-3 pt-2">
                       {edu.coursework.map((course) => (
                         <span
@@ -96,7 +100,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                     <span className="truncate">{cert.issuer}</span>
                     <span className="text-emerald-400 whitespace-nowrap shrink-0">{cert.date}</span>
                   </div>
-                  <div className="font-semibold text-sm font-['Outfit'] text-white">
+                  <div className={`font-semibold text-sm font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                     {cert.name}
                   </div>
                   <div className="flex flex-wrap gap-1.5 mt-2 text-[11px] font-['JetBrains_Mono'] text-neutral-400">
@@ -165,7 +169,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                   Resume Document
                 </div>
                 <p className="text-xs text-neutral-300 leading-relaxed">
-                  View the updated CV with verified contact information, Bells University Computer Science education, ProvidusUnity Bank risk experience, GMCPN membership, and PhishGuard project.
+                  View the updated CV with verified contact details, Bells University &amp; Faith Foundation education, ProvidusUnity Bank risk experience, GMCPN, Google Prompting Essentials, New Horizons, and PhishGuard project.
                 </p>
                 <div className="flex items-center gap-2 pt-1">
                   <button

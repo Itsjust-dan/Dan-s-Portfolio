@@ -1,0 +1,101 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 4 0 R /Annots [8 0 R 9 0 R] >>
+endobj
+4 0 obj
+<< /Length 5611 >>
+stream
+BT /F2 18.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 738.00 Tm (ADEJINMI DAN TOLUWASE) Tj ET
+BT /F1 9.80 Tf 0.220 0.220 0.220 rg 1 0 0 1 54.00 722.00 Tm (Lagos, Nigeria  |  09054026463  |  tolua612@gmail.com) Tj ET
+BT /F1 9.80 Tf 0.040 0.350 0.650 rg 1 0 0 1 54.00 708.50 Tm (LinkedIn: linkedin.com/in/dan-adejinmi) Tj ET
+q 0.040 0.350 0.650 RG 0.50 w 54.00 707.00 m 211.34 707.00 l S Q
+BT /F1 9.80 Tf 0.220 0.220 0.220 rg 1 0 0 1 211.34 708.50 Tm (  |  ) Tj ET
+BT /F1 9.80 Tf 0.040 0.350 0.650 rg 1 0 0 1 223.10 708.50 Tm (Portfolio: danthedev.vercel.app) Tj ET
+q 0.040 0.350 0.650 RG 0.50 w 223.10 707.00 m 346.39 707.00 l S Q
+BT /F2 11.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 688.50 Tm (PROFILE) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 673.50 Tm (Enthusiastic and diligent, always open to learning and improving. Has basic knowledge in cybersecurity, front-end) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 660.00 Tm (development, and UI/UX design, with a genuine drive to grow as a Cybersecurity Analyst.) Tj ET
+BT /F2 11.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 632.50 Tm (EXPERIENCE) Tj ET
+BT /F2 10.50 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 617.50 Tm (ProvidusUnity Bank) Tj ET
+BT /F3 10.00 Tf 0.220 0.220 0.220 rg 1 0 0 1 54.00 604.00 Tm (Intern, Risk Management Department  |  March 2025 \226 September 2025) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 590.50 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 590.50 Tm (Supported the Risk Management department across market, operational, and IT risk functions.) Tj ET
+BT /F2 11.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 563.00 Tm (PROJECTS) Tj ET
+BT /F2 10.50 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 548.00 Tm (PhishGuard \226 Phishing Detection Browser Extension) Tj ET
+BT /F3 10.00 Tf 0.220 0.220 0.220 rg 1 0 0 1 54.00 534.50 Tm (Final Year Project) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 521.00 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 521.00 Tm (Built a browser extension that detects phishing websites in real time using a Random Forest machine learning model) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 507.50 Tm (combined with a heuristic rule engine.) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 494.00 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 494.00 Tm (Integrated the VirusTotal API to cross-check URL reputation and strengthen detection accuracy.) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 480.50 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 480.50 Tm (Trained and evaluated the detection model on a combined dataset of roughly 236,000 URLs \(PhiUSIIL + OpenPhish\).) Tj ET
+BT /F2 10.50 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 464.00 Tm (Transportation App Interface) Tj ET
+BT /F3 10.00 Tf 0.220 0.220 0.220 rg 1 0 0 1 54.00 450.50 Tm (School Project) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 437.00 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 437.00 Tm (Designed a personal transportation app interface in Figma, focusing on usability and visual design.) Tj ET
+BT /F2 11.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 409.50 Tm (EDUCATION) Tj ET
+BT /F2 10.50 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 394.50 Tm (Bells University of Technology, Ota, Nigeria) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 381.00 Tm (B.Tech Computer Science  |  2021 \226 2026) Tj ET
+BT /F2 10.50 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 366.00 Tm (Faith Foundation Model College) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 352.50 Tm (Senior Secondary School Certificate  |  2017 \226 2020) Tj ET
+BT /F2 11.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 332.50 Tm (TRAINING AND CERTIFICATION) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 317.50 Tm (GMCPN Member, Computer Professionals Registration Council of Nigeria \227 November 2026) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 303.50 Tm (Google Prompting Essentials Specialization, Google \227 October 2026) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 289.50 Tm (New Horizons Certificate, New Horizons \227 July 2026) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 54.00 275.50 Tm (ICT Training Program \226 Desktop Expert, Datapower Technologies \227 September 2015) Tj ET
+BT /F2 11.00 Tf 0.106 0.212 0.365 rg 1 0 0 1 54.00 247.50 Tm (KEY COMPETENCIES) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 232.50 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 232.50 Tm (Python & Machine Learning \(Random Forest\)) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 219.00 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 219.00 Tm (Cybersecurity fundamentals) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 205.50 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 205.50 Tm (HTML & CSS) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 192.00 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 192.00 Tm (UI/UX Design \(Figma\)) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 178.50 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 178.50 Tm (Risk management fundamentals) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 165.00 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 165.00 Tm (Public speaking & debate) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 62.00 151.50 Tm (\225) Tj ET
+BT /F1 10.00 Tf 0.120 0.120 0.120 rg 1 0 0 1 72.00 151.50 Tm (Teamwork) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Roman /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Times-Italic /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Type /Annot /Subtype /Link /Rect [54.00 705.50 211.34 718.50] /Border [0 0 0] /A << /S /URI /URI (https://linkedin.com/in/dan-adejinmi) >> >>
+endobj
+9 0 obj
+<< /Type /Annot /Subtype /Link /Rect [223.10 705.50 346.39 718.50] /Border [0 0 0] /A << /S /URI /URI (https://danthedev.vercel.app) >> >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000283 00000 n 
+0000005946 00000 n 
+0000006045 00000 n 
+0000006143 00000 n 
+0000006243 00000 n 
+0000006404 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6558
+%%EOF

@@ -19,10 +19,14 @@ export const personalInfo = {
   location: 'Lagos, Nigeria',
   linkedinUrl: 'https://linkedin.com/in/dan-adejinmi',
   githubUrl: 'https://github.com/Itsjust-dan',
-  resumePdfUrl: '/assets/aistudio/Dan_Adejinmi_Resume_32499bbb.pdf',
+  portfolioUrl: 'https://danthedev.vercel.app',
+  portfolioDisplayUrl: 'danthedev.vercel.app',
+  resumePdfUrl: '/assets/aistudio/Dan_Adejinmi_Resume.pdf',
   gmcpnCertificateUrl: '/assets/aistudio/certificate-GM_0016625_2026_9e2a5cff.pdf',
   profile:
     'Cybersecurity Analyst and Front-End Developer with hands-on experience in banking risk management (ProvidusUnity Bank), phishing threat heuristics (PhishGuard ML), and modern interface design.',
+  resumeProfile:
+    'Enthusiastic and diligent, always open to learning and improving. Has basic knowledge in cybersecurity, front-end development, and UI/UX design, with a genuine drive to grow as a Cybersecurity Analyst.',
   status: 'Open to Junior Roles & Opportunities',
   stats: [
     { label: 'Risk Experience', value: 'ProvidusUnity Bank' },
@@ -165,6 +169,18 @@ export const educationList: Education[] = [
       'Public Speaking & Debate Competitions',
     ],
   },
+  {
+    id: 'faith-foundation',
+    degree: 'Senior Secondary School Certificate',
+    institution: 'Faith Foundation Model College',
+    location: 'Nigeria',
+    period: '2017 – 2020',
+    grade: '',
+    capstoneTitle: '',
+    capstoneSummary: '',
+    coursework: [],
+    honors: [],
+  },
 ];
 
 export const certifications: Certification[] = [
@@ -178,6 +194,26 @@ export const certifications: Certification[] = [
     skills: ['Computing Profession', 'IT Standards & Ethics', 'Computer Science Practice', 'CPN Regulatory Compliance'],
     status: 'Verified',
     verifyUrl: '/assets/aistudio/certificate-GM_0016625_2026_9e2a5cff.pdf',
+  },
+  {
+    id: 'google-prompting',
+    name: 'Google Prompting Essentials Specialization',
+    issuer: 'Google',
+    date: 'October 2026',
+    credentialId: 'GOOGLE-PROMPT-2026',
+    category: 'development',
+    skills: ['Prompt Engineering', 'AI Workflows', 'Generative AI', 'Structured Output'],
+    status: 'Verified',
+  },
+  {
+    id: 'new-horizons',
+    name: 'New Horizons Certificate',
+    issuer: 'New Horizons',
+    date: 'July 2026',
+    credentialId: 'NH-CERT-2026',
+    category: 'cybersecurity',
+    skills: ['IT & Computing Skills', 'Technical Training', 'Professional Readiness'],
+    status: 'Verified',
   },
   {
     id: 'ict-datapower',

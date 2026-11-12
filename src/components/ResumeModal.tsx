@@ -1,6 +1,6 @@
 import React from 'react';
-import { X, Printer, FileDown, ExternalLink } from 'lucide-react';
-import { personalInfo, experiences, educationList, certifications } from '../data/portfolioData';
+import { X, Printer, FileDown } from 'lucide-react';
+import { personalInfo, experiences } from '../data/portfolioData';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -63,15 +63,31 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
         {/* Resume Content Sheet */}
         <div className="p-6 sm:p-8 max-h-[78vh] overflow-y-auto space-y-6 text-xs font-['JetBrains_Mono'] print:max-h-none">
           {/* Header */}
-          <div className="border-b border-neutral-800 pb-4 space-y-1">
-            <h1 className="text-2xl font-bold font-['Outfit'] text-white">
+          <div className={`border-b pb-4 space-y-1 ${isDark ? 'border-neutral-800' : 'border-neutral-200'}`}>
+            <h1 className={`text-2xl font-bold font-['Outfit'] uppercase ${isDark ? 'text-white' : 'text-neutral-900'}`}>
               {personalInfo.name}
             </h1>
-            <div className="text-neutral-300">
+            <div className={isDark ? 'text-neutral-300' : 'text-neutral-700'}>
               {personalInfo.location} | {personalInfo.phone} | {personalInfo.email}
             </div>
-            <div className="text-cyan-400 pt-0.5">
-              LinkedIn: {personalInfo.linkedinUrl}
+            <div className="pt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-cyan-400">
+              <a
+                href={personalInfo.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                LinkedIn: linkedin.com/in/dan-adejinmi
+              </a>
+              <span className="text-neutral-500">|</span>
+              <a
+                href={personalInfo.portfolioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Portfolio: {personalInfo.portfolioDisplayUrl}
+              </a>
             </div>
           </div>
 
@@ -80,8 +96,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
             <div className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold mb-1">
               PROFILE
             </div>
-            <p className="text-neutral-300 leading-relaxed font-sans text-xs">
-              {personalInfo.profile}
+            <p className={`leading-relaxed font-sans text-xs ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
+              {personalInfo.resumeProfile}
             </p>
           </div>
 
@@ -91,14 +107,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
               EXPERIENCE
             </div>
             {experiences.map((exp) => (
-              <div key={exp.id} className="space-y-1 pb-3 border-b border-neutral-800/60 last:border-b-0">
-                <div className="font-bold text-white font-['Outfit'] text-sm">
+              <div key={exp.id} className={`space-y-1 pb-3 border-b last:border-b-0 ${isDark ? 'border-neutral-800/60' : 'border-neutral-200'}`}>
+                <div className={`font-bold font-['Outfit'] text-sm ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                   {exp.company}
                 </div>
                 <div className="text-neutral-400 italic">
                   {exp.role} | {exp.period}
                 </div>
-                <ul className="space-y-1 text-neutral-300 pt-1 pl-4 list-disc">
+                <ul className={`space-y-1 pt-1 pl-4 list-disc ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
                   <li>Supported the Risk Management department across market, operational, and IT risk functions.</li>
                 </ul>
               </div>
@@ -112,11 +128,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
             </div>
 
             <div className="space-y-1.5 pb-2">
-              <div className="font-bold text-white font-['Outfit']">
+              <div className={`font-bold font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                 PhishGuard – Phishing Detection Browser Extension
               </div>
               <div className="text-neutral-400 italic">Final Year Project</div>
-              <ul className="space-y-1 text-neutral-300 pl-4 list-disc">
+              <ul className={`space-y-1 pl-4 list-disc ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
                 <li>Built a browser extension that detects phishing websites in real time using a Random Forest machine learning model combined with a heuristic rule engine.</li>
                 <li>Integrated the VirusTotal API to cross-check URL reputation and strengthen detection accuracy.</li>
                 <li>Trained and evaluated the detection model on a combined dataset of roughly 236,000 URLs (PhiUSIIL + OpenPhish).</li>
@@ -124,11 +140,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
             </div>
 
             <div className="space-y-1.5">
-              <div className="font-bold text-white font-['Outfit']">
+              <div className={`font-bold font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                 Transportation App Interface
               </div>
               <div className="text-neutral-400 italic">School Project</div>
-              <ul className="space-y-1 text-neutral-300 pl-4 list-disc">
+              <ul className={`space-y-1 pl-4 list-disc ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
                 <li>Designed a personal transportation app interface in Figma, focusing on usability and visual design.</li>
               </ul>
             </div>
@@ -139,14 +155,22 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
             <div className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold">
               EDUCATION
             </div>
-            {educationList.map((edu) => (
-              <div key={edu.id} className="space-y-0.5">
-                <div className="font-bold text-white font-['Outfit']">{edu.institution}</div>
-                <div className="text-neutral-300">
-                  {edu.degree} {edu.grade ? `— ${edu.grade}` : ''} | {edu.period}
-                </div>
+            <div className="space-y-0.5">
+              <div className={`font-bold font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                Bells University of Technology, Ota, Nigeria
               </div>
-            ))}
+              <div className={isDark ? 'text-neutral-300' : 'text-neutral-700'}>
+                B.Tech Computer Science | 2021 – 2026
+              </div>
+            </div>
+            <div className="space-y-0.5">
+              <div className={`font-bold font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                Faith Foundation Model College
+              </div>
+              <div className={isDark ? 'text-neutral-300' : 'text-neutral-700'}>
+                Senior Secondary School Certificate | 2017 – 2020
+              </div>
+            </div>
           </div>
 
           {/* Training & Certification */}
@@ -154,9 +178,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
             <div className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold">
               TRAINING AND CERTIFICATION
             </div>
-            <div className="text-neutral-300 space-y-1">
+            <div className={`space-y-1 ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
+              <div>GMCPN Member, Computer Professionals Registration Council of Nigeria — November 2026</div>
+              <div>Google Prompting Essentials Specialization, Google — October 2026</div>
+              <div>New Horizons Certificate, New Horizons — July 2026</div>
               <div>ICT Training Program – Desktop Expert, Datapower Technologies — September 2015</div>
-              <div>GMCPN Member — November 2026</div>
             </div>
           </div>
 
@@ -165,7 +191,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
             <div className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold">
               KEY COMPETENCIES
             </div>
-            <ul className="grid grid-cols-2 gap-1 text-neutral-300 pl-4 list-disc">
+            <ul className={`grid grid-cols-1 sm:grid-cols-2 gap-1 pl-4 list-disc ${isDark ? 'text-neutral-300' : 'text-neutral-700'}`}>
               <li>Python & Machine Learning (Random Forest)</li>
               <li>Cybersecurity fundamentals</li>
               <li>HTML & CSS</li>
@@ -178,7 +204,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, isDar
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-neutral-800/80 flex items-center justify-between print:hidden">
+        <div className={`px-6 py-3 border-t flex items-center justify-between print:hidden ${isDark ? 'border-neutral-800/80' : 'border-neutral-200'}`}>
           <a
             href={personalInfo.resumePdfUrl}
             target="_blank"
