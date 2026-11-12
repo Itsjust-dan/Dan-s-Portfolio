@@ -11,7 +11,7 @@ export const heroUserPhoto = '/assets/aistudio/Daan_18f7fc8c.jpeg';
 export { heroPortrait, projectBankingRisk, projectFintechUi, projectSocMonitor, projectGoRideUi };
 
 export const personalInfo = {
-  name: 'Adejinmi Dan Toluwase',
+  name: 'Dan Adejinmi',
   preferredName: 'Dan Adejinmi',
   tagline: 'Cybersecurity Analyst · Front-End Developer · UI/UX Designer',
   email: 'tolua612@gmail.com',

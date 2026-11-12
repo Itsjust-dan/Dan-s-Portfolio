@@ -134,7 +134,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                   <button
                     onClick={() => {
                       if (onOpenCertificate) {
-                        onOpenCertificate(personalInfo.gmcpnCertificateUrl, 'GMCPN Certificate — Adejinmi Dan Toluwase');
+                        onOpenCertificate(personalInfo.gmcpnCertificateUrl, `GMCPN Certificate — ${personalInfo.name}`);
                       } else {
                         window.open(personalInfo.gmcpnCertificateUrl, '_blank');
                       }

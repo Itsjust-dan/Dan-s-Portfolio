@@ -9,7 +9,7 @@ export const Footer: React.FC<FooterProps> = ({ isDark }) => {
     <footer className={`py-8 text-center text-xs font-['JetBrains_Mono'] ${
       isDark ? 'text-neutral-500 bg-[#0a0a0a]' : 'text-neutral-400 bg-neutral-50'
     }`}>
-      <p>© {new Date().getFullYear()} Adejinmi Dan Toluwase</p>
+      <p>© {new Date().getFullYear()} Dan Adejinmi</p>
     </footer>
   );
 };

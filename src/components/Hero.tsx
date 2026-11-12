@@ -31,9 +31,9 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onOpenResume }) => {
             <h1 className={`text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight font-['Outfit'] leading-[1.08] ${
               isDark ? 'text-white' : 'text-neutral-900'
             }`}>
-              Adejinmi Dan{' '}
+              Dan{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-                Toluwase
+                Adejinmi
               </span>
             </h1>
             <p className="text-lg sm:text-2xl font-semibold text-emerald-400 font-['Outfit'] pt-1">
