@@ -30,8 +30,10 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
             {educationList.map((edu) => (
               <div
                 key={edu.id}
-                className={`p-6 rounded-2xl border transition-all flex flex-col justify-between h-full ${
-                  isDark ? 'bg-neutral-900/60 border-neutral-800 shadow-md' : 'bg-white border-neutral-200 shadow-md'
+                className={`group p-6 rounded-2xl border transition-all hover:-translate-y-1 flex flex-col justify-between h-full ${
+                  isDark
+                    ? 'bg-neutral-900/60 border-neutral-800 hover:border-emerald-500/40 shadow-md'
+                    : 'bg-white border-neutral-200 hover:border-emerald-500/40 shadow-md'
                 }`}
               >
                 <div>
@@ -39,20 +41,20 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                     (edu.grade || (edu.coursework && edu.coursework.length > 0)) ? 'pb-3 border-b border-neutral-800/80' : ''
                   }`}>
                     <div>
-                      <h3 className={`text-lg font-bold font-['Outfit'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                      <h3 className={`text-lg font-bold font-['Outfit'] group-hover:text-emerald-400 transition-colors ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                         {edu.degree}
                       </h3>
                       <div className="text-xs font-['JetBrains_Mono'] text-emerald-400 mt-0.5">
                         {edu.institution} · {edu.location}
                       </div>
                     </div>
-                    <span className="text-xs font-['JetBrains_Mono'] text-neutral-300 bg-neutral-800/80 px-2.5 py-1 rounded-full whitespace-nowrap shrink-0 self-start">
+                    <span className="text-xs font-['JetBrains_Mono'] text-emerald-400 font-medium bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full whitespace-nowrap shrink-0 self-start">
                       {edu.period}
                     </span>
                   </div>
 
                   {edu.grade && (
-                    <div className="mt-3 text-xs font-semibold text-cyan-400 font-['JetBrains_Mono']">
+                    <div className={`mt-3 text-xs font-semibold font-['JetBrains_Mono'] ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                       Status: {edu.grade}
                     </div>
                   )}
@@ -78,7 +80,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
         {/* Training & Certifications: Full-width 3x3 grid (3 per row across 3 rows = 9 items) */}
         <div className="space-y-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-['JetBrains_Mono'] border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-['JetBrains_Mono'] border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 mb-2">
               <Award className="w-3.5 h-3.5" />
               <span>Certification</span>
             </div>
@@ -93,8 +95,10 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
             {certifications.map((cert) => (
               <div
                 key={cert.id}
-                className={`p-4 sm:p-5 rounded-2xl border transition-all flex flex-col justify-between h-full ${
-                  isDark ? 'bg-neutral-900/60 border-neutral-800' : 'bg-white border-neutral-200 shadow-sm'
+                className={`group p-4 sm:p-5 rounded-2xl border transition-all hover:-translate-y-1 flex flex-col justify-between h-full ${
+                  isDark
+                    ? 'bg-neutral-900/60 border-neutral-800 hover:border-emerald-500/40'
+                    : 'bg-white border-neutral-200 hover:border-emerald-500/40 shadow-sm'
                 }`}
               >
                 <div>
@@ -102,7 +106,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                     <span className="truncate">{cert.issuer}</span>
                     <span className="text-emerald-400 whitespace-nowrap shrink-0">{cert.date}</span>
                   </div>
-                  <div className={`font-semibold text-sm font-['Outfit'] leading-snug ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+                  <div className={`font-semibold text-sm font-['Outfit'] leading-snug group-hover:text-emerald-400 transition-colors ${isDark ? 'text-white' : 'text-neutral-900'}`}>
                     {cert.name}
                   </div>
                 </div>
@@ -117,10 +121,10 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
             ))}
 
             {/* GMCPN Certificate Document Card */}
-            <div className="p-5 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/30 via-neutral-900 to-neutral-950 text-white flex flex-col justify-between h-full space-y-3 shadow-lg">
+            <div className="group p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400/60 bg-gradient-to-br from-emerald-950/30 to-neutral-900 text-white flex flex-col justify-between h-full space-y-3 shadow-lg transition-all hover:-translate-y-1">
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <span className="text-xs uppercase font-['JetBrains_Mono'] tracking-wider text-cyan-400 font-bold flex items-center gap-1.5">
+                  <span className="text-xs uppercase font-['JetBrains_Mono'] tracking-wider text-emerald-400 font-bold flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5" />
                     <span>GMCPN Certificate</span>
                   </span>
@@ -128,7 +132,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                     GM/0016625/2026
                   </span>
                 </div>
-                <div className="text-sm font-bold font-['Outfit'] text-white leading-snug">
+                <div className="text-sm font-bold font-['Outfit'] text-white leading-snug group-hover:text-emerald-400 transition-colors">
                   Graduate Member – Computer Professionals (Registration Council of Nigeria)
                 </div>
                 <p className="text-xs text-neutral-300 leading-relaxed">
@@ -144,7 +148,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                       window.open(personalInfo.gmcpnCertificateUrl, '_blank');
                     }
                   }}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl bg-cyan-500 text-neutral-950 hover:bg-cyan-400 shadow-lg shadow-cyan-500/20 transition-all cursor-pointer font-['JetBrains_Mono']"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold rounded-xl bg-emerald-500 text-neutral-950 hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 transition-all cursor-pointer font-['JetBrains_Mono']"
                 >
                   <Eye className="w-3.5 h-3.5" />
                   <span>View Certificate</span>
@@ -154,7 +158,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
                   href={personalInfo.gmcpnCertificateUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-xl border border-neutral-700 bg-neutral-900 text-neutral-300 hover:text-white hover:border-cyan-500/50 transition-all"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-xl border border-neutral-700 bg-neutral-900 text-neutral-300 hover:text-white hover:border-emerald-500/50 transition-all"
                   title="Open PDF in new tab"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -163,15 +167,14 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ isDark, 
             </div>
 
             {/* Resume Document Card */}
-            <div className="p-5 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/30 to-neutral-900 text-white flex flex-col justify-between h-full space-y-3">
+            <div className="group p-5 rounded-2xl border border-emerald-500/30 hover:border-emerald-400/60 bg-gradient-to-br from-emerald-950/30 to-neutral-900 text-white flex flex-col justify-between h-full space-y-3 transition-all hover:-translate-y-1">
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-xs uppercase font-['JetBrains_Mono'] tracking-wider text-emerald-400 font-bold">
                     Resume Document
                   </span>
-                  <span className="text-[10px] text-neutral-400 font-['JetBrains_Mono']">PDF / Interactive</span>
                 </div>
-                <div className="text-sm font-bold font-['Outfit']">
+                <div className="text-sm font-bold font-['Outfit'] group-hover:text-emerald-400 transition-colors">
                   Official CV
                 </div>
                 <p className="text-xs text-neutral-300 leading-relaxed">

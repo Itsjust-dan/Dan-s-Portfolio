@@ -11,7 +11,7 @@ interface ProjectsSectionProps {
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDark, onSelectProject }) => {
   return (
     <section id="projects" className="py-16 md:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-['JetBrains_Mono'] border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 mb-2">
@@ -52,11 +52,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ isDark, onSele
               >
                 <div>
                   {/* Card Top Meta */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-neutral-800/60 text-xs font-['JetBrains_Mono']">
-                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold">
+                  <div className="flex flex-wrap lg:flex-nowrap items-center justify-between gap-2 pb-3 border-b border-neutral-800/60 text-xs font-['JetBrains_Mono']">
+                    <span className="px-2.5 py-1 rounded-full bg-neutral-800/80 text-neutral-400 text-[10px] sm:whitespace-nowrap">
                       {project.categoryLabel}
                     </span>
-                    <span className="text-neutral-400 text-[11px]">
+                    <span className="text-emerald-400 text-[11px] whitespace-nowrap shrink-0">
                       {project.year}
                     </span>
                   </div>

@@ -9,7 +9,7 @@ interface SkillsSectionProps {
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ isDark }) => {
   const icons = [
     <Shield key="cyber" className="w-4 h-4 text-emerald-400" />,
-    <Users key="risk" className="w-4 h-4 text-cyan-400" />,
+    <Users key="risk" className="w-4 h-4 text-emerald-400" />,
     <Code key="frontend" className="w-4 h-4 text-teal-400" />,
     <Palette key="uiux" className="w-4 h-4 text-emerald-300" />,
   ];
@@ -33,7 +33,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ isDark }) => {
           {skillCategories.map((cat, idx) => (
             <div
               key={cat.title}
-              className={`p-6 rounded-2xl border space-y-4 transition-all hover:-translate-y-1 ${
+              className={`group p-6 rounded-2xl border space-y-4 transition-all hover:-translate-y-1 ${
                 isDark
                   ? 'bg-neutral-900/60 border-neutral-800 hover:border-emerald-500/40 shadow-lg'
                   : 'bg-white border-neutral-200 hover:border-emerald-500/40 shadow-md'
@@ -43,7 +43,9 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ isDark }) => {
                 <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                   {icons[idx]}
                 </div>
-                <h3 className="font-['Outfit'] font-bold text-base text-white">
+                <h3 className={`font-['Outfit'] font-bold text-base group-hover:text-emerald-400 transition-colors ${
+                  isDark ? 'text-white' : 'text-neutral-900'
+                }`}>
                   {cat.title}
                 </h3>
               </div>

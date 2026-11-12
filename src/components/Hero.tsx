@@ -107,9 +107,9 @@ export const Hero: React.FC<HeroProps> = ({ isDark, onOpenResume }) => {
                 label: personalInfo.phone,
                 href: `tel:${personalInfo.phone}`,
                 external: false,
-                icon: <Phone className="w-4 h-4 text-emerald-400 shrink-0" />,
+                icon: <Phone className="w-4 h-4 text-cyan-400 shrink-0" />,
                 ariaLabel: `Phone: ${personalInfo.phone}`,
-                accent: 'hover:border-emerald-500/50 hover:text-emerald-400',
+                accent: 'hover:border-cyan-500/50 hover:text-cyan-400',
               },
               {
                 label: 'LinkedIn',

@@ -31,14 +31,16 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ isDark }) 
         </div>
 
         {/* Clean Experience Card */}
-        <div className={`rounded-2xl border p-6 sm:p-8 transition-all ${
+        <div className={`group rounded-2xl border p-6 sm:p-8 transition-all hover:-translate-y-1 ${
           isDark
-            ? 'bg-neutral-900/60 border-neutral-800 shadow-xl'
-            : 'bg-white border-neutral-200 shadow-md'
+            ? 'bg-neutral-900/60 border-neutral-800 hover:border-emerald-500/40 shadow-xl'
+            : 'bg-white border-neutral-200 hover:border-emerald-500/40 shadow-md'
         }`}>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-neutral-800/60 gap-2">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold font-['Outfit'] text-white">
+              <h3 className={`text-xl sm:text-2xl font-bold font-['Outfit'] group-hover:text-emerald-400 transition-colors ${
+                isDark ? 'text-white' : 'text-neutral-900'
+              }`}>
                 {exp.role}
               </h3>
               <p className="text-xs text-emerald-400 font-['JetBrains_Mono'] mt-0.5">

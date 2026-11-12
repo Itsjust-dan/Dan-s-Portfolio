@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ExternalLink, Download } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 
 interface CertificateModalProps {
   isOpen: boolean;
@@ -31,7 +31,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
       >
         {/* Top Controls Header */}
         <div className="flex items-center justify-between px-6 py-3.5 border-b border-neutral-800/80">
-          <div className="text-xs font-['JetBrains_Mono'] text-cyan-400 font-semibold flex items-center gap-2">
+          <div className="text-xs font-['JetBrains_Mono'] text-emerald-400 font-semibold flex items-center gap-2">
             <span>{certificateTitle}</span>
           </div>
 
@@ -40,7 +40,7 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
               href={certificateUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-['JetBrains_Mono'] rounded-full bg-cyan-500 text-neutral-950 font-bold hover:bg-cyan-400 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-['JetBrains_Mono'] rounded-full bg-emerald-500 text-neutral-950 font-bold hover:bg-emerald-400 transition-colors"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               <span>Open in New Tab</span>
